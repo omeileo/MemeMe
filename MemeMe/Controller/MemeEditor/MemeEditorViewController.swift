@@ -25,13 +25,11 @@ class MemeEditorViewController: UIViewController
     {
         super.viewDidLoad()
         memeTopCaptionTextField.delegate = self
-        memeBottomCaptionTextField.delegate = self 
-        
-        meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil)
+        memeBottomCaptionTextField.delegate = self
         memeCaptions = [memeTopCaptionTextField, memeBottomCaptionTextField]
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
         hideKeyboardWhenTappedOutside()
-        
         setupCaptions()
     }
 
@@ -100,6 +98,6 @@ class MemeEditorViewController: UIViewController
 
     @IBAction func cancelMeme(_ sender: UIButton)
     {
-        
+        _ = navigationController?.popViewController(animated: true)
     }
 }
