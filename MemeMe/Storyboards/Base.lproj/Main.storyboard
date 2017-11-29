@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-bc-bZ0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-bc-bZ0">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="plo-gv-eb2">
@@ -70,38 +70,46 @@
                                     <action selector="launchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0S-Tq-xNB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEME ME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWV-4F-wT0">
-                                <rect key="frame" x="66.5" y="89" width="242" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="MEME ME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-ay-FzC">
+                                <rect key="frame" x="62.5" y="89" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="CTc-XC-cV7"/>
+                                    <constraint firstAttribute="height" constant="50" id="Sss-Qi-ack"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxr-9k-jzD">
-                                <rect key="frame" x="92.5" y="505" width="190.5" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="PLEASE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-uQ-1AN">
+                                <rect key="frame" x="87.5" y="521" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="AEO-m7-L3P"/>
+                                    <constraint firstAttribute="height" constant="50" id="ofr-Ng-q6Z"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lxr-9k-jzD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0v7-Vb-AYm"/>
+                            <constraint firstItem="Jjr-ay-FzC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="02T-rX-8cn"/>
                             <constraint firstItem="2NN-Xz-umN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Ri-97-9Zr"/>
                             <constraint firstItem="n9S-bc-bZ0" firstAttribute="leading" secondItem="2NN-Xz-umN" secondAttribute="leading" id="4NR-TE-qrn"/>
-                            <constraint firstItem="VUY-C6-IIh" firstAttribute="top" secondItem="lxr-9k-jzD" secondAttribute="bottom" constant="25" id="8il-Qu-acS"/>
+                            <constraint firstItem="Jjr-ay-FzC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6bX-Bj-inw"/>
                             <constraint firstItem="n9S-bc-bZ0" firstAttribute="trailing" secondItem="2NN-Xz-umN" secondAttribute="trailing" id="AbE-Bl-rd9"/>
-                            <constraint firstItem="aWV-4F-wT0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="C0O-ly-2Pi"/>
                             <constraint firstItem="plo-gv-eb2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GCj-jT-yWq"/>
                             <constraint firstItem="VUY-C6-IIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kh8-PJ-s6F"/>
-                            <constraint firstItem="aWV-4F-wT0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M9G-af-M59"/>
                             <constraint firstItem="2NN-Xz-umN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="My2-X3-aW1"/>
                             <constraint firstItem="n9S-bc-bZ0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="U8S-te-iE3"/>
                             <constraint firstItem="plo-gv-eb2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d9M-nA-9O1"/>
                             <constraint firstAttribute="bottom" secondItem="VUY-C6-IIh" secondAttribute="bottom" constant="-15" id="gfg-fL-Cfd"/>
                             <constraint firstAttribute="bottom" secondItem="plo-gv-eb2" secondAttribute="bottom" id="lRa-lC-AwN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="plo-gv-eb2" secondAttribute="trailing" id="oYG-V6-aK9"/>
+                            <constraint firstItem="ahp-uQ-1AN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q6j-Pu-whb"/>
                             <constraint firstItem="2NN-Xz-umN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qbH-5j-o2V"/>
                             <constraint firstAttribute="bottomMargin" secondItem="n9S-bc-bZ0" secondAttribute="bottom" id="wrD-hR-Zet"/>
+                            <constraint firstItem="VUY-C6-IIh" firstAttribute="top" secondItem="ahp-uQ-1AN" secondAttribute="bottom" constant="25" id="ziC-0J-gED"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -109,14 +117,15 @@
                     <connections>
                         <outlet property="changeFontButton" destination="639-dr-9Ac" id="Pgc-c5-2Dx"/>
                         <outlet property="downloadMemeButton" destination="88H-bh-OdE" id="uVQ-5E-MW4"/>
-                        <outlet property="landingScreenCaptionBottomLabel" destination="lxr-9k-jzD" id="Bfn-8M-BcH"/>
-                        <outlet property="landingScreenCaptionTopLabel" destination="aWV-4F-wT0" id="bb3-ng-M7O"/>
+                        <outlet property="landingScreenCaptionBottom" destination="ahp-uQ-1AN" id="6oq-5M-IQH"/>
+                        <outlet property="landingScreenCaptionTop" destination="Jjr-ay-FzC" id="lst-7h-Yg5"/>
+                        <outlet property="memeGalleryButton" destination="mHG-gW-vOJ" id="PAx-K6-uA8"/>
                         <segue destination="JDM-LB-Cd2" kind="show" identifier="memeEditorSegue" id="eE2-kc-Pfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="107"/>
+            <point key="canvasLocation" x="-671.20000000000005" y="106.59670164917542"/>
         </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="fVr-3h-j0z">

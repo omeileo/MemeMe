@@ -26,13 +26,13 @@ extension MemeEditorViewController
     
     func configureCaption(textField: UITextField)
     {
-        let memeCaptionAttributes: [String:Any] = [
+        let memeCaptionAttributes = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
             NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 50)!,
-            NSAttributedStringKey.strokeWidth.rawValue: -6.00]
+            NSAttributedStringKey.strokeWidth.rawValue: -6.00] as [AnyHashable : Any]
         
-        textField.defaultTextAttributes = memeCaptionAttributes
+        textField.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
         textField.textAlignment = .center
         textField.adjustsFontSizeToFitWidth = true
         

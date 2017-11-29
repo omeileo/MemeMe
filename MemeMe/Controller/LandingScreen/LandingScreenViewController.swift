@@ -10,8 +10,9 @@ import Foundation
 
 class LandingScreenViewController: UIViewController
 {
-    @IBOutlet weak var landingScreenCaptionTopLabel: UILabel!
-    @IBOutlet weak var landingScreenCaptionBottomLabel: UILabel!
+    @IBOutlet weak var landingScreenCaptionTop: UITextField!
+    @IBOutlet weak var landingScreenCaptionBottom: UITextField!
+    @IBOutlet weak var memeGalleryButton: UIBarButtonItem!
     
     let memeEditorVCSegue = "memeEditorSegue"
     var meme: Meme!
@@ -19,6 +20,16 @@ class LandingScreenViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let memeCaptionAttributes = [
+            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 64)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -6.00] as [AnyHashable : Any]
+        
+        landingScreenCaptionTop.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
+        landingScreenCaptionBottom.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
+        
+        memeGalleryButton.isEnabled = false
         navigationController?.setNavigationBarHidden(true, animated: true)
         meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil)
     }
