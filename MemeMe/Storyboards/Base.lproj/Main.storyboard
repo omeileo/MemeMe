@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TimesNewRomanBold.ttf">
+            <string>TimesNewRomanPS-BoldMT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Landing Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LandingScreenViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-bc-bZ0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="plo-gv-eb2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NN-Xz-umN">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="Memes" width="111" id="mHG-gW-vOJ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="A9i-sj-RGF"/>
+                                    <barButtonItem image="Gallery" width="116" id="tah-zP-DUh">
+                                        <connections>
+                                            <action selector="launchGallery:" destination="BYZ-38-t0r" id="IQy-Ru-jrV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUY-C6-IIh">
+                                <rect key="frame" x="145" y="596" width="86" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="FX7-Fb-eew"/>
+                                    <constraint firstAttribute="height" constant="86" id="UWT-1d-l4Y"/>
+                                </constraints>
+                                <state key="normal" image="Camera-Released-1"/>
+                                <state key="selected" image="Send"/>
+                                <connections>
+                                    <action selector="launchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0S-Tq-xNB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEME ME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWV-4F-wT0">
+                                <rect key="frame" x="66.5" y="45" width="242" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxr-9k-jzD">
+                                <rect key="frame" x="92.5" y="505" width="190.5" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lxr-9k-jzD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0v7-Vb-AYm"/>
+                            <constraint firstItem="2NN-Xz-umN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Ri-97-9Zr"/>
+                            <constraint firstItem="n9S-bc-bZ0" firstAttribute="leading" secondItem="2NN-Xz-umN" secondAttribute="leading" id="4NR-TE-qrn"/>
+                            <constraint firstItem="VUY-C6-IIh" firstAttribute="top" secondItem="lxr-9k-jzD" secondAttribute="bottom" constant="25" id="8il-Qu-acS"/>
+                            <constraint firstItem="n9S-bc-bZ0" firstAttribute="trailing" secondItem="2NN-Xz-umN" secondAttribute="trailing" id="AbE-Bl-rd9"/>
+                            <constraint firstItem="aWV-4F-wT0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="C0O-ly-2Pi"/>
+                            <constraint firstItem="plo-gv-eb2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GCj-jT-yWq"/>
+                            <constraint firstItem="VUY-C6-IIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kh8-PJ-s6F"/>
+                            <constraint firstItem="aWV-4F-wT0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M9G-af-M59"/>
+                            <constraint firstItem="2NN-Xz-umN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="My2-X3-aW1"/>
+                            <constraint firstItem="n9S-bc-bZ0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="U8S-te-iE3"/>
+                            <constraint firstItem="plo-gv-eb2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d9M-nA-9O1"/>
+                            <constraint firstAttribute="bottom" secondItem="VUY-C6-IIh" secondAttribute="bottom" constant="-15" id="gfg-fL-Cfd"/>
+                            <constraint firstAttribute="bottom" secondItem="plo-gv-eb2" secondAttribute="bottom" id="lRa-lC-AwN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="plo-gv-eb2" secondAttribute="trailing" id="oYG-V6-aK9"/>
+                            <constraint firstItem="2NN-Xz-umN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qbH-5j-o2V"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="n9S-bc-bZ0" secondAttribute="bottom" id="wrD-hR-Zet"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="changeFontButton" destination="639-dr-9Ac" id="Pgc-c5-2Dx"/>
+                        <outlet property="downloadMemeButton" destination="88H-bh-OdE" id="uVQ-5E-MW4"/>
+                        <outlet property="landingScreenCaptionBottomLabel" destination="lxr-9k-jzD" id="Bfn-8M-BcH"/>
+                        <outlet property="landingScreenCaptionTopLabel" destination="aWV-4F-wT0" id="bb3-ng-M7O"/>
+                        <segue destination="JDM-LB-Cd2" kind="show" identifier="memeEditorSegue" id="eE2-kc-Pfu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-610.39999999999998" y="106.59670164917542"/>
+        </scene>
+        <!--Meme Editor View Controller-->
+        <scene sceneID="fVr-3h-j0z">
+            <objects>
+                <viewController id="JDM-LB-Cd2" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="seb-FX-ZzH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-sz-ENA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZiX-9I-AUr" userLabel="Secondary Action Buttons">
+                                <rect key="frame" x="20" y="614" width="70" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88H-bh-OdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="33"/>
+                                        <state key="normal" image="Download"/>
+                                        <connections>
+                                            <action selector="downloadMeme:" destination="JDM-LB-Cd2" eventType="touchUpInside" id="Vdg-If-gWv"/>
+                                            <action selector="downloadMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wob-g2-TAb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="639-dr-9Ac">
+                                        <rect key="frame" x="42" y="0.0" width="28" height="33"/>
+                                        <state key="normal" image="Text"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="892-GK-5nJ">
+                                <rect key="frame" x="20" y="20" width="27" height="27"/>
+                                <state key="normal" image="Close"/>
+                                <connections>
+                                    <action selector="cancelMeme:" destination="JDM-LB-Cd2" eventType="touchUpInside" id="aEd-AK-duT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmU-Cz-WDz">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <state key="normal" image="Send-Disabled"/>
+                            </button>
+                            <textField opaque="NO" alpha="0.14999999999999999" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="2Jo-7f-uuT">
+                                <rect key="frame" x="30" y="77" width="315" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5Mr-MR-wr9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" alpha="0.14999999999999999" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="frM-sL-Cpj">
+                                <rect key="frame" x="30" y="512" width="315" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="OHw-Mh-qyQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="yes" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="frM-sL-Cpj" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" constant="30" id="45I-TA-1XX"/>
+                            <constraint firstItem="IKt-sz-ENA" firstAttribute="top" secondItem="seb-FX-ZzH" secondAttribute="top" id="F78-JH-Yj1"/>
+                            <constraint firstItem="IKt-sz-ENA" firstAttribute="bottom" secondItem="l74-JH-02O" secondAttribute="bottom" id="Hem-Ha-ZW3"/>
+                            <constraint firstItem="IKt-sz-ENA" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" id="IUY-Si-zG9"/>
+                            <constraint firstItem="l74-JH-02O" firstAttribute="bottom" secondItem="DmU-Cz-WDz" secondAttribute="bottom" constant="20" id="IbW-HQ-6mz"/>
+                            <constraint firstItem="DmU-Cz-WDz" firstAttribute="top" secondItem="frM-sL-Cpj" secondAttribute="bottom" constant="30" id="JbC-WY-4JS"/>
+                            <constraint firstItem="l74-JH-02O" firstAttribute="trailing" secondItem="DmU-Cz-WDz" secondAttribute="trailing" constant="20" id="Ka8-RI-tXZ"/>
+                            <constraint firstItem="l74-JH-02O" firstAttribute="bottom" secondItem="ZiX-9I-AUr" secondAttribute="bottom" constant="20" id="VBC-oQ-ZSg"/>
+                            <constraint firstItem="l74-JH-02O" firstAttribute="trailing" secondItem="2Jo-7f-uuT" secondAttribute="trailing" constant="30" id="cXC-3P-hQh"/>
+                            <constraint firstItem="892-GK-5nJ" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" constant="20" id="oGK-gJ-3iS"/>
+                            <constraint firstItem="2Jo-7f-uuT" firstAttribute="top" secondItem="892-GK-5nJ" secondAttribute="bottom" constant="30" id="thQ-ee-seg"/>
+                            <constraint firstItem="ZiX-9I-AUr" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" constant="20" id="tmu-P8-GU4"/>
+                            <constraint firstItem="892-GK-5nJ" firstAttribute="top" secondItem="l74-JH-02O" secondAttribute="top" id="trm-JI-z4a"/>
+                            <constraint firstItem="IKt-sz-ENA" firstAttribute="trailing" secondItem="l74-JH-02O" secondAttribute="trailing" id="umB-60-8J1"/>
+                            <constraint firstItem="2Jo-7f-uuT" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" constant="30" id="yFC-pT-ZK6"/>
+                            <constraint firstItem="l74-JH-02O" firstAttribute="trailing" secondItem="frM-sL-Cpj" secondAttribute="trailing" constant="30" id="ykj-o9-d8u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l74-JH-02O"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelMemeButton" destination="892-GK-5nJ" id="IvW-Fv-hlH"/>
+                        <outlet property="changeFontButton" destination="639-dr-9Ac" id="8kt-tA-KG5"/>
+                        <outlet property="downloadMemeButton" destination="88H-bh-OdE" id="4jP-BS-B4L"/>
+                        <outlet property="memeBottomCaptionTextField" destination="frM-sL-Cpj" id="Oay-AE-pQX"/>
+                        <outlet property="memeTopCaptionTextField" destination="2Jo-7f-uuT" id="TZw-ct-rk8"/>
+                        <outlet property="sendButton" destination="DmU-Cz-WDz" id="ixc-c0-k03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMu-lD-T29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229.59999999999999" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Camera-Released-1" width="92" height="92"/>
+        <image name="Close" width="27" height="27"/>
+        <image name="Download" width="32" height="33"/>
+        <image name="Gallery" width="20" height="21"/>
+        <image name="Gradient" width="375" height="667"/>
+        <image name="Image" width="375" height="667"/>
+        <image name="Memes" width="23" height="25"/>
+        <image name="Send" width="50" height="50"/>
+        <image name="Send-Disabled" width="50" height="50"/>
+        <image name="Text" width="28" height="31"/>
+    </resources>
+</document>
