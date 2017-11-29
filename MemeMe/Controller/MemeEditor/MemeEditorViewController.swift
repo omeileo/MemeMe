@@ -17,6 +17,10 @@ class MemeEditorViewController: UIViewController
     @IBOutlet weak var cancelMemeButton: UIButton!
     @IBOutlet weak var downloadMemeButton: UIButton!
     @IBOutlet weak var changeFontButton: UIButton!
+    @IBOutlet weak var memeImageView: UIImageView!
+    
+    @IBOutlet weak var bottomCaptionDistanceFromSendButton: NSLayoutConstraint!
+    @IBOutlet weak var topCaptionDistanceFromCloseButton: NSLayoutConstraint!
     
     var meme: Meme!
     var memeCaptions: [UITextField] = []
@@ -31,6 +35,8 @@ class MemeEditorViewController: UIViewController
         navigationController?.setNavigationBarHidden(true, animated: true)
         hideKeyboardWhenTappedOutside()
         setupCaptions()
+        enableActionButtons(false)
+        configureMemeImage()
     }
 
     override func viewWillDisappear(_ animated: Bool)
@@ -57,7 +63,7 @@ class MemeEditorViewController: UIViewController
         }
     }
 
-    func generateCompletedMeme()
+    func generateCompletedMeme(to action: Action)
     {
         meme.topCaption = memeTopCaptionTextField.text!
         meme.bottomCaption = memeBottomCaptionTextField.text!
@@ -75,6 +81,14 @@ class MemeEditorViewController: UIViewController
         hideOnscreenControls(false)
         
         meme.memeImage = memedImage
+        
+        switch action
+        {
+            case .download:
+                UIImageWriteToSavedPhotosAlbum(meme.memeImage!, nil, nil, nil)
+            case .share:
+                shareMeme(meme: meme.memeImage!)
+        }
     }
 
     func hideOnscreenControls(_ state: Bool)
@@ -83,17 +97,19 @@ class MemeEditorViewController: UIViewController
         downloadMemeButton.isHidden = state
         changeFontButton.isHidden = state
         cancelMemeButton.isHidden = state
+        
+        topCaptionDistanceFromCloseButton.constant = state ? -15 : 20
+        bottomCaptionDistanceFromSendButton.constant = state ? -30 : 30
     }
 
     @IBAction func downloadMeme(_ sender: UIButton)
     {
-        // Allow download of meme if both Caption fields contain text
-        generateCompletedMeme()
-        
-        if let meme = meme.memeImage
-        {
-            UIImageWriteToSavedPhotosAlbum(meme, nil, nil, nil)
-        }
+        generateCompletedMeme(to: Action.download)
+    }
+    
+    @IBAction func sendMeme(_ sender: Any)
+    {
+        generateCompletedMeme(to: Action.share)
     }
 
     @IBAction func cancelMeme(_ sender: UIButton)

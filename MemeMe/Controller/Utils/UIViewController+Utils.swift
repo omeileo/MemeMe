@@ -45,7 +45,7 @@ extension UIViewController
     {
         resetView()
         
-        view.frame.origin.y -= (getKeyboardHeight(notification))
+        view.frame.origin.y -= (getKeyboardHeight(notification)/1.5)
     }
     
     @objc func keyboardWillHide(_ notification: Notification)

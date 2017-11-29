@@ -27,8 +27,6 @@ class LandingScreenViewController: UIViewController
     {
         let imageSourceType: UIImagePickerControllerSourceType = .photoLibrary
         handleImageSelection(imageSourceType: imageSourceType)
-        
-        // Change appState to .captionEditing when image has been selected (see delegate function)
     }
     
     @IBAction func launchCamera(_ sender: Any)

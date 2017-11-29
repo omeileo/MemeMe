@@ -11,6 +11,34 @@ import UIKit
 
 extension MemeEditorViewController
 {
+    // MARK: Configure Captions for User to Edit
+    func setupCaptions()
+    {
+        // Set up text fields
+        for caption in memeCaptions
+        {
+            configureCaption(textField: caption)
+        }
+        
+        populateTextField(textField: memeCaptions[0], text: "TOP")
+        populateTextField(textField: memeCaptions[1], text: "BOTTOM")
+    }
+    
+    func configureCaption(textField: UITextField)
+    {
+        let memeCaptionAttributes: [String:Any] = [
+            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 50)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -6.00]
+        
+        textField.defaultTextAttributes = memeCaptionAttributes
+        textField.textAlignment = .center
+        textField.adjustsFontSizeToFitWidth = true
+        
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
     @objc func textFieldDidChange (_ textField: UITextField)
     {
         if textField.hasText
@@ -41,31 +69,10 @@ extension MemeEditorViewController
         }
     }
     
-    func addImageToView(image: UIImage)
+    func configureMemeImage()
     {
-        
-    }
-    
-    func enableCaptions(_ state: Bool)
-    {
-        for caption in memeCaptions
-        {
-            caption.isEnabled = state
-            adjustTextFieldVisibility(textField: caption, colorAlpha: 0.15)
-        }
-        
-        if state == true
-        {
-            populateTextField(textField: memeCaptions[0], text: "TOP")
-            populateTextField(textField: memeCaptions[1], text: "BOTTOM")
-        }
-        else
-        {
-            for caption in memeCaptions
-            {
-                populateTextField(textField: caption, text: nil)
-            }
-        }
+        memeImageView.contentMode = .scaleAspectFill
+        memeImageView.image = meme.originalImage
     }
     
     func populateTextField(textField: UITextField, text: String?)
@@ -80,9 +87,9 @@ extension MemeEditorViewController
         textField.alpha = 1.0
     }
     
-    func enableActionButtons(_ state: Bool)
+    func enableActionButtons(_ enable: Bool)
     {
-        downloadMemeButton.isEnabled = state
-        sendButton.isEnabled = state
+        downloadMemeButton.isEnabled = enable
+        sendButton.isEnabled = enable
     }
 }

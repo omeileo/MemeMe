@@ -147,7 +147,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="892-GK-5nJ">
-                                <rect key="frame" x="20" y="84" width="27" height="27"/>
+                                <rect key="frame" x="20" y="84" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="TgA-U9-lz0"/>
+                                    <constraint firstAttribute="height" constant="20" id="dBw-qu-JqT"/>
+                                </constraints>
                                 <state key="normal" image="Close"/>
                                 <connections>
                                     <action selector="cancelMeme:" destination="JDM-LB-Cd2" eventType="touchUpInside" id="aEd-AK-duT"/>
@@ -155,10 +159,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmU-Cz-WDz">
                                 <rect key="frame" x="305" y="597" width="50" height="50"/>
-                                <state key="normal" image="Send-Disabled"/>
+                                <state key="normal" image="Send"/>
+                                <state key="disabled" image="Send-Disabled"/>
+                                <connections>
+                                    <action selector="sendMeme:" destination="JDM-LB-Cd2" eventType="touchUpInside" id="aJw-ZB-Jko"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" alpha="0.14999999999999999" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="2Jo-7f-uuT">
-                                <rect key="frame" x="30" y="141" width="315" height="55"/>
+                            <textField opaque="NO" alpha="0.14999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="2Jo-7f-uuT">
+                                <rect key="frame" x="30" y="124" width="315" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -168,7 +176,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" alpha="0.14999999999999999" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="frM-sL-Cpj">
+                            <textField opaque="NO" alpha="0.14999999999999999" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="frM-sL-Cpj">
                                 <rect key="frame" x="30" y="512" width="315" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,7 +200,7 @@
                             <constraint firstItem="l74-JH-02O" firstAttribute="bottom" secondItem="ZiX-9I-AUr" secondAttribute="bottom" constant="20" id="VBC-oQ-ZSg"/>
                             <constraint firstItem="l74-JH-02O" firstAttribute="trailing" secondItem="2Jo-7f-uuT" secondAttribute="trailing" constant="30" id="cXC-3P-hQh"/>
                             <constraint firstItem="892-GK-5nJ" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" constant="20" id="oGK-gJ-3iS"/>
-                            <constraint firstItem="2Jo-7f-uuT" firstAttribute="top" secondItem="892-GK-5nJ" secondAttribute="bottom" constant="30" id="thQ-ee-seg"/>
+                            <constraint firstItem="2Jo-7f-uuT" firstAttribute="top" secondItem="892-GK-5nJ" secondAttribute="bottom" constant="20" id="thQ-ee-seg"/>
                             <constraint firstItem="ZiX-9I-AUr" firstAttribute="leading" secondItem="l74-JH-02O" secondAttribute="leading" constant="20" id="tmu-P8-GU4"/>
                             <constraint firstItem="892-GK-5nJ" firstAttribute="top" secondItem="l74-JH-02O" secondAttribute="top" constant="20" id="trm-JI-z4a"/>
                             <constraint firstItem="IKt-sz-ENA" firstAttribute="trailing" secondItem="l74-JH-02O" secondAttribute="trailing" id="umB-60-8J1"/>
@@ -202,12 +210,15 @@
                         <viewLayoutGuide key="safeArea" id="l74-JH-02O"/>
                     </view>
                     <connections>
+                        <outlet property="bottomCaptionDistanceFromSendButton" destination="JbC-WY-4JS" id="C6o-ZR-bHm"/>
                         <outlet property="cancelMemeButton" destination="892-GK-5nJ" id="IvW-Fv-hlH"/>
                         <outlet property="changeFontButton" destination="639-dr-9Ac" id="8kt-tA-KG5"/>
                         <outlet property="downloadMemeButton" destination="88H-bh-OdE" id="4jP-BS-B4L"/>
                         <outlet property="memeBottomCaptionTextField" destination="frM-sL-Cpj" id="Oay-AE-pQX"/>
+                        <outlet property="memeImageView" destination="IKt-sz-ENA" id="iFI-9N-myE"/>
                         <outlet property="memeTopCaptionTextField" destination="2Jo-7f-uuT" id="TZw-ct-rk8"/>
                         <outlet property="sendButton" destination="DmU-Cz-WDz" id="ixc-c0-k03"/>
+                        <outlet property="topCaptionDistanceFromCloseButton" destination="thQ-ee-seg" id="W6r-Sv-h0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMu-lD-T29" userLabel="First Responder" sceneMemberID="firstResponder"/>

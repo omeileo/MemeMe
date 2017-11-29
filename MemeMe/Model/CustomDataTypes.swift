@@ -18,4 +18,9 @@ enum AppState
     case imageSelection, captionEditing
 }
 
+enum Action
+{
+    case share, download
+}
+
 
