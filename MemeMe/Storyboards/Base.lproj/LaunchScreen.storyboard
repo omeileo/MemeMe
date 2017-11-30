@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +16,53 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="8Bv-rQ-nRF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main" translatesAutoresizingMaskIntoConstraints="NO" id="1JV-2r-7Ld">
+                                <rect key="frame" x="147" y="270" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Qq6-ep-eDe"/>
+                                    <constraint firstAttribute="height" constant="80" id="eLh-rs-Hhl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MemeMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-FD-R1r">
+                                <rect key="frame" x="138" y="365" width="98.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFY-9v-ye3">
+                                <rect key="frame" x="161.5" y="632.5" width="51.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Bv-rQ-nRF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2dJ-FZ-zje"/>
+                            <constraint firstItem="1JV-2r-7Ld" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4UH-2d-yfF"/>
+                            <constraint firstItem="8Bv-rQ-nRF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HYe-Lb-ztA"/>
+                            <constraint firstItem="1JV-2r-7Ld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="a3G-k9-2hi"/>
+                            <constraint firstItem="8Bv-rQ-nRF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bKf-eg-5I0"/>
+                            <constraint firstItem="Ti7-FD-R1r" firstAttribute="top" secondItem="1JV-2r-7Ld" secondAttribute="bottom" constant="15" id="cD6-9m-xhh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jFY-9v-ye3" secondAttribute="bottom" constant="20" id="fAn-pX-Vfi"/>
+                            <constraint firstItem="8Bv-rQ-nRF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hMo-wj-dUk"/>
+                            <constraint firstItem="jFY-9v-ye3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mZZ-qY-tbc"/>
+                            <constraint firstItem="Ti7-FD-R1r" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vKi-eO-AyR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Gradient" width="375" height="667"/>
+        <image name="Main" width="60" height="60"/>
+    </resources>
 </document>
