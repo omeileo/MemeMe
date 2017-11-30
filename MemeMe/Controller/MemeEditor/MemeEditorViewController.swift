@@ -24,7 +24,8 @@ class MemeEditorViewController: UIViewController
     
     var meme: Meme!
     var memeCaptions: [UITextField] = []
-    let maxLength = 12
+    let maxLength = 8
+    var fontFamilies: [String] = []
 
     override func viewDidLoad()
     {
@@ -32,6 +33,7 @@ class MemeEditorViewController: UIViewController
         memeTopCaptionTextField.delegate = self
         memeBottomCaptionTextField.delegate = self
         memeCaptions = [memeTopCaptionTextField, memeBottomCaptionTextField]
+        fontFamilies = [FontFamily.arial.rawValue, FontFamily.helvetica.rawValue, FontFamily.times.rawValue]
         
         navigationController?.setNavigationBarHidden(true, animated: true)
         hideKeyboardWhenTappedOutside()
@@ -106,6 +108,22 @@ class MemeEditorViewController: UIViewController
     @IBAction func downloadMeme(_ sender: UIButton)
     {
         generateCompletedMeme(to: Action.download)
+    }
+    
+    @IBAction func changeFontFamily(_ sender: Any)
+    {
+        let font = fontFamilies.first!
+        for index in 0..<(fontFamilies.count-1)
+        {
+            fontFamilies[index] = fontFamilies[index+1]
+        }
+        
+        fontFamilies[fontFamilies.count-1] = font
+        
+        for caption in memeCaptions
+        {
+            configureCaptionText(caption: caption, fontFamily: font)
+        }
     }
     
     @IBAction func sendMeme(_ sender: Any)

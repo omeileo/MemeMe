@@ -26,7 +26,7 @@ extension MemeEditorViewController
     
     func configureCaption(textField: UITextField)
     {
-        configureCaptionText(caption: textField, fontSize: 64)
+        configureCaptionText(caption: textField, fontFamily: "HelveticaNeue-CondensedBlack")
         
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

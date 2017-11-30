@@ -11,13 +11,13 @@ import UIKit
 
 extension UIViewController
 {
-    func configureCaptionText(caption: UITextField, fontSize: CGFloat)
+    func configureCaptionText(caption: UITextField, fontFamily: String)
     {
         let memeCaptionAttributes = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: fontSize)!,
-            NSAttributedStringKey.strokeWidth.rawValue: -6.00] as [AnyHashable : Any]
+            NSAttributedStringKey.font.rawValue: UIFont(name: fontFamily, size: 64)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -5.00] as [AnyHashable : Any]
         
         caption.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
         caption.textAlignment = .center

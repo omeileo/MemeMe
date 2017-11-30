@@ -23,4 +23,9 @@ enum Action
     case share, download
 }
 
-
+enum FontFamily: String
+{
+    case helvetica = "HelveticaNeue-CondensedBlack"
+    case arial = "Arial-BoldItalicMT"
+    case times = "TimesNewRomanPS-BoldItalicMT"
+}

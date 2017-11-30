@@ -70,7 +70,7 @@
                                     <action selector="launchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0S-Tq-xNB"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="MEME ME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-ay-FzC">
+                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="MEME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-ay-FzC">
                                 <rect key="frame" x="62.5" y="89" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="CTc-XC-cV7"/>
@@ -80,7 +80,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="PLEASE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-uQ-1AN">
+                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="MEEEEE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-uQ-1AN">
                                 <rect key="frame" x="87.5" y="521" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="AEO-m7-L3P"/>
@@ -152,6 +152,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="639-dr-9Ac">
                                         <rect key="frame" x="42" y="0.0" width="28" height="33"/>
                                         <state key="normal" image="Text"/>
+                                        <connections>
+                                            <action selector="changeFontFamily:" destination="JDM-LB-Cd2" eventType="touchUpInside" id="8vr-t1-9u7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

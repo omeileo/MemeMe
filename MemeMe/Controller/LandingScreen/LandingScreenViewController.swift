@@ -20,8 +20,12 @@ class LandingScreenViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureCaptionText(caption: landingScreenCaptionTop, fontSize: 64)
-        configureCaptionText(caption: landingScreenCaptionBottom, fontSize: 64)
+        let memeCaptions = [landingScreenCaptionTop, landingScreenCaptionBottom]
+        
+        for caption in memeCaptions
+        {
+            configureCaptionText(caption: caption!, fontFamily: "HelveticaNeue-CondensedBlack")
+        }
        
         memeGalleryButton.isEnabled = false
         navigationController?.setNavigationBarHidden(true, animated: true)
