@@ -20,15 +20,9 @@ class LandingScreenViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let memeCaptionAttributes = [
-            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 64)!,
-            NSAttributedStringKey.strokeWidth.rawValue: -6.00] as [AnyHashable : Any]
-        
-        landingScreenCaptionTop.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
-        landingScreenCaptionBottom.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
-        
+        configureCaptionText(caption: landingScreenCaptionTop, fontSize: 64)
+        configureCaptionText(caption: landingScreenCaptionBottom, fontSize: 64)
+       
         memeGalleryButton.isEnabled = false
         navigationController?.setNavigationBarHidden(true, animated: true)
         meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil)

@@ -24,6 +24,7 @@ class MemeEditorViewController: UIViewController
     
     var meme: Meme!
     var memeCaptions: [UITextField] = []
+    let maxLength = 12
 
     override func viewDidLoad()
     {

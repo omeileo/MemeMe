@@ -26,15 +26,7 @@ extension MemeEditorViewController
     
     func configureCaption(textField: UITextField)
     {
-        let memeCaptionAttributes = [
-            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 50)!,
-            NSAttributedStringKey.strokeWidth.rawValue: -6.00] as [AnyHashable : Any]
-        
-        textField.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
-        textField.textAlignment = .center
-        textField.adjustsFontSizeToFitWidth = true
+        configureCaptionText(caption: textField, fontSize: 64)
         
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

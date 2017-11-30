@@ -11,6 +11,19 @@ import UIKit
 
 extension UIViewController
 {
+    func configureCaptionText(caption: UITextField, fontSize: CGFloat)
+    {
+        let memeCaptionAttributes = [
+            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: fontSize)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -6.00] as [AnyHashable : Any]
+        
+        caption.defaultTextAttributes = memeCaptionAttributes as! [String : Any]
+        caption.textAlignment = .center
+        caption.adjustsFontSizeToFitWidth = true
+    }
+    
     //hide keyboard when area outside of textfield is touched
     func hideKeyboardWhenTappedOutside()
     {
