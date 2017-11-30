@@ -16,7 +16,7 @@ extension UIViewController
         let memeCaptionAttributes = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: fontFamily, size: 64)!,
+            NSAttributedStringKey.font.rawValue: UIFont(name: fontFamily, size: 55)!,
             NSAttributedStringKey.strokeWidth.rawValue: -5.00] as [AnyHashable : Any]
         
         caption.defaultTextAttributes = memeCaptionAttributes as! [String : Any]

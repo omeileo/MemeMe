@@ -27,6 +27,7 @@ extension MemeEditorViewController
     func configureCaption(textField: UITextField)
     {
         configureCaptionText(caption: textField, fontFamily: FontFamily.helvetica.rawValue)
+        textField.layer.cornerRadius = 55/2
         
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
