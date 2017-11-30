@@ -119,6 +119,7 @@
                         <outlet property="downloadMemeButton" destination="88H-bh-OdE" id="uVQ-5E-MW4"/>
                         <outlet property="landingScreenCaptionBottom" destination="ahp-uQ-1AN" id="6oq-5M-IQH"/>
                         <outlet property="landingScreenCaptionTop" destination="Jjr-ay-FzC" id="lst-7h-Yg5"/>
+                        <outlet property="launchCameraButton" destination="VUY-C6-IIh" id="knm-hM-0eo"/>
                         <outlet property="memeGalleryButton" destination="mHG-gW-vOJ" id="PAx-K6-uA8"/>
                         <segue destination="JDM-LB-Cd2" kind="show" identifier="memeEditorSegue" id="eE2-kc-Pfu"/>
                     </connections>

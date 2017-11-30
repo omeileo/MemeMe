@@ -13,9 +13,11 @@ class LandingScreenViewController: UIViewController
     @IBOutlet weak var landingScreenCaptionTop: UITextField!
     @IBOutlet weak var landingScreenCaptionBottom: UITextField!
     @IBOutlet weak var memeGalleryButton: UIBarButtonItem!
+    @IBOutlet weak var launchCameraButton: UIButton!
     
     let memeEditorVCSegue = "memeEditorSegue"
     var meme: Meme!
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,28 @@ class LandingScreenViewController: UIViewController
         
         for caption in memeCaptions
         {
-            configureCaptionText(caption: caption!, fontFamily: "HelveticaNeue-CondensedBlack")
+            configureCaptionText(caption: caption!, fontFamily: FontFamily.helvetica.rawValue)
         }
        
+        setupCamera()
         memeGalleryButton.isEnabled = false
         navigationController?.setNavigationBarHidden(true, animated: true)
         meme = Meme.init(originalImage: nil, memeImage: nil, topCaption: nil, bottomCaption: nil)
+    }
+    
+    func setupCamera()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        {
+            imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.allowsEditing = true
+        }
+        else
+        {
+            launchCameraButton.isHidden = true
+        }
     }
     
     @IBAction func launchGallery(_ sender: Any)
@@ -40,14 +58,7 @@ class LandingScreenViewController: UIViewController
     
     @IBAction func launchCamera(_ sender: Any)
     {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
-        {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
