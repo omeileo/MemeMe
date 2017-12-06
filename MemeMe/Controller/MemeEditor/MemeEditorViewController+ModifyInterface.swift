@@ -63,6 +63,7 @@ extension MemeEditorViewController
             if activityTypeChosen != nil && completed
             {
                 UIImageWriteToSavedPhotosAlbum(meme, nil, nil, nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
