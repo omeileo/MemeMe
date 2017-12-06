@@ -57,9 +57,7 @@ extension MemeEditorViewController
     func shareMeme(meme: UIImage)
     {
         let shareController = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
-        present(shareController, animated: true) {
-//            UIImageWriteToSavedPhotosAlbum(meme, nil, nil, nil)
-        }
+        present(shareController, animated: true, completion: nil)
         
         shareController.completionWithItemsHandler = {(activityTypeChosen: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if activityTypeChosen != nil && completed
