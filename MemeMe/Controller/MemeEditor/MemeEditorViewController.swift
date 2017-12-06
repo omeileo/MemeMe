@@ -66,7 +66,7 @@ class MemeEditorViewController: UIViewController
         }
     }
 
-    func generateCompletedMeme(to action: Action)
+    func generateCompletedMeme()
     {
         meme.topCaption = memeTopCaptionTextField.text!
         meme.bottomCaption = memeBottomCaptionTextField.text!
@@ -84,7 +84,10 @@ class MemeEditorViewController: UIViewController
         hideOnscreenControls(false)
         
         meme.memeImage = memedImage
-        
+    }
+    
+    func perform(action: Action)
+    {
         switch action
         {
             case .download:
@@ -107,7 +110,8 @@ class MemeEditorViewController: UIViewController
 
     @IBAction func downloadMeme(_ sender: UIButton)
     {
-        generateCompletedMeme(to: Action.download)
+        generateCompletedMeme()
+        perform(action: Action.download)
     }
     
     @IBAction func changeFontFamily(_ sender: Any)
@@ -128,7 +132,8 @@ class MemeEditorViewController: UIViewController
     
     @IBAction func sendMeme(_ sender: Any)
     {
-        generateCompletedMeme(to: Action.share)
+        generateCompletedMeme()
+        perform(action: Action.share)
     }
 
     @IBAction func cancelMeme(_ sender: UIButton)
