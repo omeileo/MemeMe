@@ -54,24 +54,24 @@ extension MemeEditorViewController
     }
     
     // MARK: Present Share Options Modally
-    func shareMeme(meme: UIImage)
+    func shareMeme(completedMeme: UIImage)
     {
-        let shareController = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
-        present(shareController, animated: true) {
-//            UIImageWriteToSavedPhotosAlbum(meme, nil, nil, nil)
-        }
+        let shareController = UIActivityViewController(activityItems: [completedMeme], applicationActivities: nil)
         
+        present(shareController, animated: true, completion: nil)
         shareController.completionWithItemsHandler = {(activityTypeChosen: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if activityTypeChosen != nil && completed
             {
-                UIImageWriteToSavedPhotosAlbum(meme, nil, nil, nil)
+                UIImageWriteToSavedPhotosAlbum(completedMeme, nil, nil, nil)
+                self.memes.append(self.meme)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
     
     func configureMemeImage()
     {
-        memeImageView.contentMode = .scaleAspectFill
+        memeImageView.contentMode = .scaleAspectFit
         memeImageView.image = meme.originalImage
     }
     

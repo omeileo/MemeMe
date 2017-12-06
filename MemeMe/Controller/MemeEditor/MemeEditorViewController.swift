@@ -11,18 +11,20 @@ import UIKit
 
 class MemeEditorViewController: UIViewController
 {
-    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var actionsToolbar: UIToolbar!
+    @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var memeTopCaptionTextField: UITextField!
     @IBOutlet weak var memeBottomCaptionTextField: UITextField!
     @IBOutlet weak var cancelMemeButton: UIButton!
-    @IBOutlet weak var downloadMemeButton: UIButton!
-    @IBOutlet weak var changeFontButton: UIButton!
+    @IBOutlet weak var downloadMemeButton: UIBarButtonItem!
+    @IBOutlet weak var changeFontButton: UIBarButtonItem!
     @IBOutlet weak var memeImageView: UIImageView!
     
-    @IBOutlet weak var bottomCaptionDistanceFromSendButton: NSLayoutConstraint!
+    @IBOutlet weak var bottomCaptionDistanceFromToolbar: NSLayoutConstraint!
     @IBOutlet weak var topCaptionDistanceFromCloseButton: NSLayoutConstraint!
     
     var meme: Meme!
+    var memes: [Meme] = []
     var memeCaptions: [UITextField] = []
     let maxLength = 8
     var fontFamilies: [String] = []
@@ -30,6 +32,7 @@ class MemeEditorViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         memeTopCaptionTextField.delegate = self
         memeBottomCaptionTextField.delegate = self
         memeCaptions = [memeTopCaptionTextField, memeBottomCaptionTextField]
@@ -90,22 +93,17 @@ class MemeEditorViewController: UIViewController
             case .download:
                 UIImageWriteToSavedPhotosAlbum(meme.memeImage!, nil, nil, nil)
             case .share:
-                shareMeme(meme: meme.memeImage!)
+                shareMeme(completedMeme: meme.memeImage!)
         }
     }
 
     func hideOnscreenControls(_ state: Bool)
     {
-        sendButton.isHidden = state
-        downloadMemeButton.isHidden = state
-        changeFontButton.isHidden = state
+        actionsToolbar.isHidden = state
         cancelMemeButton.isHidden = state
-        
-        topCaptionDistanceFromCloseButton.constant = state ? -15 : 20
-        bottomCaptionDistanceFromSendButton.constant = state ? -30 : 30
     }
 
-    @IBAction func downloadMeme(_ sender: UIButton)
+    @IBAction func downloadMeme(_ sender: Any)
     {
         generateCompletedMeme(to: Action.download)
     }
